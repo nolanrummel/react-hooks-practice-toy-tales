@@ -19,10 +19,15 @@ function App() {
     .then(toysData => setToys(toysData))
   }, [])
 
+  // console.log(newToy)
+  function addNewToy(newToy){
+    setToys([...toys, newToy])
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm addNewToy={addNewToy}/> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>

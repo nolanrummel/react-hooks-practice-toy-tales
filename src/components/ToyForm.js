@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ToyForm() {
+function ToyForm({addNewToy}) {
 
   const blankToy = {
     id: "",
@@ -19,7 +19,7 @@ function ToyForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    addNewToy(formData)
     //POST formData
   }
 
